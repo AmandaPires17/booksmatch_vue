@@ -1,47 +1,47 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import genreService from '@/services/genres.js'
+import categoriaService from '@/services/categorias.js'
 
-const genres = ref([])
-const currentGenre = ref({
+const categorias = ref([])
+const currentCategoria = ref({
   name: ''
 })
 
 onMounted(async () => {
-  const data = await genreService.getAllGenres()
-  genres.value = data
+  const data = await categoriaService.getAllCategorias()
+  categorias.value = data
 })
 
 async function save() {
-  await genreService.saveGenre(currentGenre.value)
-  const data = await genreService.getAllGenres()
-  genres.value = data
-  currentGenre.value = { name: '' }
+  await categoriaService.saveCategoria(currentCategoria.value)
+  const data = await categoriaService.getAllCategorias()
+  categorias.value = data
+  currentCategoria.value = { name: '' }
 }
 
-async function deleteGenre(genre) {
-  await genreService.deleteGenre(genre)
-  const data = await genreService.getAllGenres()
-  genres.value = data
+async function deleteCategoria(categoria) {
+  await categoriaService.deleteCategoria(categoria)
+  const data = await categoriaService.getAllCategorias()
+  categorias.value = data
 }
 
-function editGenre(genre) {
-  currentGenre.value = { ...genre }
+function editCategoria(categoria) {
+  currentCategoria.value = { ...categoria }
 }
 </script>
 
 <template>
-  <h2>Meus gêneros de filmes</h2>
+  <h2>Minhas Categorias de Livros</h2>
   <hr />
   <ul>
-    <li v-for="genre in genres" :key="genre.id">
-      {{ genre.name }} - <button @click="deleteGenre(genre)">Excluir</button
-      ><button @click="editGenre(genre)">Editar</button>
+    <li v-for="categoria in categorias" :key="categoria.id">
+      {{ categoria.name }} - <button @click="deleteCategoria(categoria)">Excluir</button
+      ><button @click="editCategoria(categoria)">Editar</button>
     </li>
   </ul>
   <hr />
   <div class="form">
-    <input type="text" v-model="currentGenre.name" />
+    <input type="text" v-model="currentCategoria.name" />
     <button @click="save">Salvar</button>
   </div>
 </template>

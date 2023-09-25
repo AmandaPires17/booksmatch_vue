@@ -1,23 +1,23 @@
 import api from '../plugins/api'
 
-class GenreService {
-  async getAllGenres() {
-    const response = await api.get('/genres/')
+class CategoriaService {
+  async getAllCategorias() {
+    const response = await api.get('/categorias/')
     return response.data
   }
-  async saveGenre(genre) {
+  async saveCategoria(categoria) {
     let response
-    if (genre.id) {
-      response = await api.put(`/genres/${genre.id}/`, genre)
+    if (categoria.id) {
+      response = await api.put(`/categorias/${categoria.id}/`, categoria)
     } else {
-      response = await api.post('/genres/', genre)
+      response = await api.post('/categorias/', categoria)
     }
     return response.data
   }
-  async deleteGenre(genre) {
-    const response = await api.delete(`/genres/${genre.id}/`)
+  async deleteCategoria(categoria) {
+    const response = await api.delete(`/categorias/${categoria.id}/`)
     return response.data
   }
 }
 
-export default new GenreService()
+export default new CategoriaService()

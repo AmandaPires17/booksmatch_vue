@@ -2,7 +2,7 @@
 
 <template>
   <header>
-    <h1>Meus filmes</h1>
+    <h1>Meus Livros</h1>
   </header>
   <main>
     <RouterView />
