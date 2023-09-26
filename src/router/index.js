@@ -10,12 +10,12 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/generos',
-      name: 'genre',
-      component: () => import('../views/GenreView.vue')
+      path: '/categorias',
+      name: 'categoria',
+      component: () => import('../views/CategoriaView.vue')
     },
     {
-      path: '/filmes',
+      path: '/livros',
       name: 'livro',
       component: () => import('../views/LivroView.vue')
     }

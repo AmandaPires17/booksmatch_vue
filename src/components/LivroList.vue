@@ -25,7 +25,7 @@ onMounted(async () => {
             <StarIcon v-for="n in 5 - livro.rating" :key="n" fillColor="gray" size="18" />
           </div>
         </div>
-        <p>{{ livro.genre }}</p>
+        <p>{{ livro.categoria }}</p>
       </div>
     </div>
   </div>
