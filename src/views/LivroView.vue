@@ -48,7 +48,7 @@ const showForm = ref(false)
 
 <template>
   <div class="row">
-    <h2>Filmes</h2>
+    <h2>Livros</h2>
     <button class="addButton" @click="showForm = true">
       <PlusBoxIcon />
       Adicionar
@@ -57,7 +57,7 @@ const showForm = ref(false)
   <LivroList />
   <modal :visible="showForm" @close="showForm = false">
     <template #header>
-      <h3>Cadastro de filme</h3>
+      <h3>Cadastro de livros</h3>
     </template>
     <template #body>
       <form class="form">
@@ -84,21 +84,21 @@ const showForm = ref(false)
         </div>
         <div class="form-item">
           <select v-model="currentLivro.categoria">
-            <option disabled value="">Selecione um gênero</option>
+            <option disabled value="">Selecione uma Categoria</option>
             <option v-for="categoria in categorias" :key="categoria.id" :value="categoria.id">
               {{ categoria.name }}
             </option>
           </select>
-          <label for="year">Gênero</label>
+          <label for="year">Categoria</label>
         </div>
         <div class="form-item">
           <select v-model="currentLivro.rating">
-            <option disabled value="">Rating</option>
+            <option disabled value="">Avaliação</option>
             <option v-for="n in [0, 1, 2, 3, 4, 5]" :key="n" :value="n">
               {{ n }}
             </option>
           </select>
-          <label for="year">Rating</label>
+          <label for="year">Avaliação</label>
         </div>
       </form>
     </template>
@@ -153,4 +153,4 @@ const showForm = ref(false)
   width: 200px;
   height: 270px;
 }
-</style>>
+</style>

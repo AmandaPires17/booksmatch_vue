@@ -35,13 +35,13 @@ function editCategoria(categoria) {
 </script>
 
 <template>
-  <h2>Gêneros de filmes</h2>
+  <h2>Categoria de Livros</h2>
   <div class="row center">
     <form class="form">
       <div class="row">
         <div class="row form-item">
-          <input type="text" placeholder="Gênero" v-model="currentCategoria.name" @keyup.enter="save" />
-          <label for="">Gênero</label>
+          <input type="text" placeholder="Categoria" v-model="currentCategoria.name" @keyup.enter="save" />
+          <label for="">Categoria</label>
         </div>
         <button @click="save">
           <ContentSaveIcon />

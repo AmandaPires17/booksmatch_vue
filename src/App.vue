@@ -4,8 +4,8 @@
   <header>
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/generos">Gêneros</RouterLink>
-      <RouterLink to="/filmes">Filmes</RouterLink>
+      <RouterLink to="/categorias">Categorias</RouterLink>
+      <RouterLink to="/livros">Livros</RouterLink>
     </nav>
   </header>
   <main>
